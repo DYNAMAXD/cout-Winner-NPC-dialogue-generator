@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Galaxy-themed NPC Generator Design System */
+
+@layer base {
+  :root {
+    /* Space/Galaxy Color Palette */
+    --background: 220 100% 2%;
+    --foreground: 210 40% 98%;
+    
+    /* Galaxy Theme Colors */
+    --space-black: 220 100% 2%;
+    --deep-space: 240 30% 8%;
+    --cosmic-blue: 220 100% 50%;
+    --electric-purple: 270 100% 60%;
+    --neon-cyan: 180 100% 50%;
+    --stellar-white: 210 40% 98%;
+    --nebula-pink: 320 100% 70%;
+    
+    /* UI Color System */
+    --background: 220 100% 2%;
+    --foreground: 210 40% 98%;
+    
+    --card: 240 30% 8%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 240 30% 8%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 220 100% 50%;
+    --primary-foreground: 220 100% 2%;
+    
+    --secondary: 240 30% 12%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 240 30% 15%;
+    --muted-foreground: 220 20% 65%;
+    
+    --accent: 270 100% 60%;
+    --accent-foreground: 220 100% 2%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 240 30% 18%;
+    --input: 240 30% 12%;
+    --ring: 220 100% 50%;
+    
+    /* Gradients */
+    --gradient-galaxy: linear-gradient(135deg, hsl(220 100% 2%), hsl(240 30% 8%), hsl(270 50% 15%));
+    --gradient-neon: linear-gradient(90deg, hsl(220 100% 50%), hsl(270 100% 60%), hsl(180 100% 50%));
+    --gradient-cosmic: radial-gradient(circle, hsl(270 100% 60% / 0.3), transparent 50%);
+    
+    /* Shadows & Glows */
+    --shadow-neon: 0 0 20px hsl(var(--cosmic-blue) / 0.5);
+    --shadow-purple: 0 0 20px hsl(var(--electric-purple) / 0.5);
+    --shadow-cyan: 0 0 20px hsl(var(--neon-cyan) / 0.5);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  /* Galaxy Background */
+  .galaxy-bg {
+    background: var(--gradient-galaxy);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .galaxy-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.4), transparent),
+      radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.6), transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: twinkle 20s linear infinite;
+    opacity: 0.7;
+  }
+  
+  /* Neon Effects */
+  .neon-glow {
+    box-shadow: var(--shadow-neon);
+    transition: all 0.3s ease;
+  }
+  
+  .neon-glow:hover {
+    box-shadow: var(--shadow-neon), var(--shadow-purple);
+    transform: translateY(-2px);
+  }
+  
+  .neon-text {
+    color: hsl(var(--cosmic-blue));
+    text-shadow: 0 0 10px hsl(var(--cosmic-blue) / 0.8);
+  }
+  
+  .cosmic-card {
+    background: linear-gradient(135deg, hsl(var(--card) / 0.8), hsl(var(--secondary) / 0.6));
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border));
+  }
+}
+
+@layer components {
+  /* Animations */
+  @keyframes twinkle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes pulse-neon {
+    0%, 100% { 
+      box-shadow: 0 0 10px hsl(var(--cosmic-blue) / 0.5);
+    }
+    50% { 
+      box-shadow: 0 0 20px hsl(var(--cosmic-blue) / 0.8), 
+                  0 0 30px hsl(var(--electric-purple) / 0.6);
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-neon {
+    animation: pulse-neon 2s ease-in-out infinite;
+  }
+}
