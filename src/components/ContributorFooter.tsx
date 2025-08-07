@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Linkedin, Mail } from "lucide-react";
 import sujalimg from "./sujal.jpg"
+import divyansh from "./divyansh.jpg"
 import adiimg from "./adi.jpg"
 const ContributorFooter = () => {
   const contributors = [
@@ -34,18 +35,18 @@ const ContributorFooter = () => {
       links: {
         github: "#",
         linkedin: "#",
-        email: "jordan@npcgen.dev"
+        email: "sam@npcgen.dev"
       }
     },
     {
       id: 4,
       name: "Divyansh Yadav",
       contribution: "UI/UX Design",
-      image: "",
+      image: divyansh,
       links: {
-        github: "#",
-        linkedin: "#",
-        email: "sam@npcgen.dev"
+        github: "https://github.com/DYNAMAXD/",
+        linkedin: "https://www.linkedin.com/in/divyansh-yadav-b03a54202/",
+        email: "dynamicdivyansh925@gmail.com"
       }
     }
   ];
