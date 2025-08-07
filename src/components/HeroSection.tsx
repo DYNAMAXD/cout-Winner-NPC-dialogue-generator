@@ -4,7 +4,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 text-center">
         <div className="animate-float">
           <h1 className="text-6xl md:text-8xl font-bold mb-8 neon-text">
-            NPC-DIALOGUE-GENERATOR
+            AI POWERED NPCs
           </h1>
           
           <div className="max-w-4xl mx-auto mb-12">
